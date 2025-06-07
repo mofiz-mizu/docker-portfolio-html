@@ -10,9 +10,9 @@ RUN apt install apache2-utils -y
 
 RUN apt clean 
 
-RUN  git clone https://github.com/mofiz-mizu/docker-portfolio-html.git .
+RUN  git clone https://github.com/mofiz-mizu/docker-portfolio-html.git /app
 
-COPY docker-portfolio-html/*  /var/www/html/
+RUN cp -r /app/*  /var/www/html/
 
 RUN service apache2 restart
 
